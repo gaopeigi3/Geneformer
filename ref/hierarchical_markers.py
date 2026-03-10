@@ -146,15 +146,67 @@ hierarchical_markers = {
     },
     "Erythroid": {
         "general": ['HBD', 'HBM', 'AHSP', 'ALAS2','CA1', 'SLC4A1', 'IFIT1B', 'TRIM58', 'SELENBP1', 'TMCC2'],
-        "subtypes": {
-            "Early Erythroid": ["CNRIP1", "GATA2", "ITGA2B", "TFR2",
-                                "GATA1", "KLF1", "CYTL1", "MAP7",
-                                "FSCN1", "APOC1"],
-            "Late Erythroid": ["CTSE", "TSPO2", "IFIT1B", "TMEM56",
-                               "RHCE", "RHAG", "SPTA1", "ADD2",
-                               "EPCAM", "HBG1"]
-        }
-    },
+    #     "subtypes": {
+    #         "Early Erythroid": ["CNRIP1", "GATA2", "ITGA2B", "TFR2",
+    #                             "GATA1", "KLF1", "CYTL1", "MAP7",
+    #                             "FSCN1", "APOC1"],
+    #         "Late Erythroid": ["CTSE", "TSPO2", "IFIT1B", "TMEM56",
+    #                            "RHCE", "RHAG", "SPTA1", "ADD2",
+    #                            "EPCAM", "HBG1"]
+    #     }
+    # },
+
+    "subtypes": {
+        # 1) BFU-E (earliest erythroid progenitor-like)
+        # CD34 high, CD36 low/-, TFRC low, still hematopoietic background
+        "BFU_E": [
+            'CD34', 'PTPRC', 'TFRC', 'CD44'
+        ],
+
+        # 2) CFU-E (committed erythroid progenitor)
+        # CD34 down, CD36 up, TFRC high
+        "CFU_E": [
+            'CD36', 'TFRC', 'CD44'
+        ],
+
+        # 3) Proerythroblast (start terminal differentiation)
+        # GYPA turns on, TFRC high, EPOR may appear
+        "Proerythroblast_ProE": [
+            'GYPA', 'TFRC', 'EPOR', 'CD44'
+        ],
+
+        # 4) Basophilic erythroblast (early terminal)
+        # TFRC high, GYPA+, ITGA4 often higher earlier, SLC4A1 starting
+        "Basophilic_Erythroblast": [
+            'GYPA', 'TFRC', 'ITGA4', 'SLC4A1'
+        ],
+
+        # 5) Polychromatic erythroblast (mid terminal)
+        # TFRC starts trending down, Band3 (SLC4A1) up
+        "Polychromatic_Erythroblast": [
+            'GYPA', 'SLC4A1', 'TFRC'
+        ],
+
+        # 6) Orthochromatic erythroblast (late terminal; pre-enucleation)
+        # TFRC low, Band3 high, ITGA4 down
+        "Orthochromatic_Erythroblast": [
+            'GYPA', 'SLC4A1', 'ITGA4'
+        ],
+
+        # 7) Reticulocyte (enucleated but still immature)
+        # still can have TFRC, strong GYPA/SLC4A1
+        "Reticulocyte": [
+            'GYPA', 'SLC4A1', 'TFRC'
+        ],
+
+        # 8) Mature RBC
+        # strong GYPA/SLC4A1, TFRC absent/very low
+        "RBC_Mature_Erythrocyte": [
+            'GYPA', 'SLC4A1'
+        ], }
+    },	
+
+
     "Platelets": {
         "general": ["RGS18", "C2orf88", "TMEM40", "GP9",
                     "PF4", "PPBP", "DAB2", "SPARC",

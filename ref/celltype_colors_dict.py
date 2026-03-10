@@ -1,4 +1,3 @@
-
 celltype_colors_dict = {
     # ---- CD4 T ----
     "CD4": "#8dd3c7",
@@ -66,6 +65,19 @@ celltype_colors_dict = {
     "Erythroid": "#d9d9d9",
     "Early Erythroid": "#bdbdbd",
     "Late Erythroid": "#969696",
+
+    # "Erythroid": "#f0f0f0",                 # general / pan-erythroid (very light gray)
+
+    "BFU_E": "#e0ecf4",                      # very early progenitor (pale blue-gray)
+    "CFU_E": "#bfd3e6",                      # committed progenitor (light blue)
+
+    "Proerythroblast_ProE": "#9ebcda",       # start terminal differentiation
+    "Basophilic_Erythroblast": "#8c96c6",    # early terminal
+    "Polychromatic_Erythroblast": "#8c6bb1", # mid terminal (more purple)
+    "Orthochromatic_Erythroblast": "#88419d",# late terminal (deep purple)
+
+    "Reticulocyte": "#810f7c",               # enucleated but immature (dark purple)
+    "RBC_Mature_Erythrocyte": "#4d004b",     # mature RBC (very dark purple)
 
     # ---- Platelets ----
     "Platelets": "#a6cee3",
